@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="theme-color" content="#f1e8d8">
+<title>밤일기</title>
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+
+    <!-- 오늘 화면 -->
+    <section id="view-today" class="view">
+      <div class="top-row">
+        <p id="yesterday-goal" class="yesterday-goal" hidden></p>
+        <button id="history-icon" class="history-icon" aria-label="지난 기록"></button>
+      </div>
+      <p id="today-date" class="date-label"></p>
+
+      <div class="field">
+        <label for="entry-input">오늘 하루</label>
+        <textarea id="entry-input" placeholder="오늘 있었던 일을 편하게 적어보세요"></textarea>
+      </div>
+
+      <div class="field">
+        <label for="goal-input">내일 목표</label>
+        <input id="goal-input" type="text" placeholder="간단하게 한 가지만">
+      </div>
+    </section>
+
+    <!-- 지난 기록 목록 -->
+    <section id="view-list" class="view" hidden>
+      <div class="top-row">
+        <button id="back-from-list" class="back-btn">← 오늘로</button>
+      </div>
+      <h2 class="section-title">지난 기록</h2>
+      <ul id="history-list"></ul>
+      <p id="history-empty" class="empty-msg" hidden>아직 지난 기록이 없어요</p>
+    </section>
+
+    <!-- 지난 기록 상세 -->
+    <section id="view-detail" class="view" hidden>
+      <div class="top-row">
+        <button id="back-from-detail" class="back-btn">← 목록으로</button>
+      </div>
+      <p id="detail-date" class="date-label"></p>
+      <div class="field">
+        <label>그날의 기록</label>
+        <p id="detail-entry" class="readonly-text"></p>
+      </div>
+      <div class="field">
+        <label>그날 세운 내일 목표</label>
+        <p id="detail-goal" class="readonly-text"></p>
+      </div>
+    </section>
+
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

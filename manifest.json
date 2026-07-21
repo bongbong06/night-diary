@@ -1,0 +1,18 @@
+{
+  "name": "밤일기",
+  "short_name": "밤일기",
+  "description": "자기 전에 오늘 하루와 내일 목표를 간단히 적는 일기",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f1e8d8",
+  "theme_color": "#f1e8d8",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
