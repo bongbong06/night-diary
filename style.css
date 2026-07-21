@@ -31,6 +31,10 @@ html, body {
   gap: 20px;
 }
 
+.view[hidden] {
+  display: none;
+}
+
 .top-row {
   display: flex;
   justify-content: space-between;
