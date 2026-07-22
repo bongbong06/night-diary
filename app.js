@@ -4,6 +4,7 @@ function getDateKey(date) {
   const y = date.getFullYear();
   const m = String(date.getMonth() + 1).padStart(2, "0");
   const d = String(date.getDate()).padStart(2, "0");
+  // padStart keeps keys same-length ("07" not "7") so string sort == date order
   return `${y}-${m}-${d}`;
 }
 
@@ -19,6 +20,8 @@ function saveAll(data) {
   localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
 }
 
+// waits until typing pauses for `wait` ms before actually saving,
+// so we don't hit localStorage on every keystroke
 function debounce(fn, wait) {
   let timer;
   return (...args) => {
@@ -63,6 +66,7 @@ const detailDateEl = document.getElementById("detail-date");
 const detailEntryEl = document.getElementById("detail-entry");
 const detailGoalEl = document.getElementById("detail-goal");
 
+// all 3 sections exist in the DOM at once; this just toggles which one is hidden
 function showView(name) {
   Object.entries(views).forEach(([key, el]) => {
     el.hidden = key !== name;

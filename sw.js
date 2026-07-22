@@ -1,3 +1,5 @@
+// bump this on every deploy that changes cached files, or browsers keep
+// serving the old cached version even after new code is pushed
 const CACHE_NAME = "night-diary-v2";
 const APP_SHELL = [
   "./",
